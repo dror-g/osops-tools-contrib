@@ -58,8 +58,10 @@
     state: "present"
     auth: "{{ auth }}"
     region_name: "{{ app_env.region_name }}"
+    availability_zone: "uk-1a"
     name: database
     image: "{{ app_env.image_name }}"
+    boot_from_volume: yes
     key_name: "lampstack"
     timeout: 200
     flavor: "{{ openstack_flavors[0].id }}"
@@ -81,8 +83,10 @@
     state: "present"
     auth: "{{ auth }}"
     region_name: "{{ app_env.region_name }}"
+    availability_zone: "uk-1a"
     name: balancer
     image: "{{ app_env.image_name }}"
+    boot_from_volume: yes
     key_name: "lampstack"
     timeout: 200
     flavor: "{{ openstack_flavors[0].id }}"
@@ -113,8 +117,10 @@
     state: "present"
     auth: "{{ auth }}"
     region_name: "{{ app_env.region_name }}"
+    availability_zone: "uk-1a"
     name: apache-{{ item }}
     image: "{{ app_env.image_name }}"
+    boot_from_volume: yes
     key_name: "lampstack"
     timeout: 200
     flavor: "{{ openstack_flavors[0].id }}"
